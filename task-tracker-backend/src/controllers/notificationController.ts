@@ -30,3 +30,21 @@ export const markAsRead = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+// src/controllers/notificationController.ts
+export const createNotification = async (req: Request, res: Response) => {
+  const { childId, message } = req.body;
+
+  try {
+    await pool.query(
+      `INSERT INTO notifications (child_id, message)
+       VALUES ($1, $2)`,
+      [childId, message]
+    );
+    res.status(201).json({ message: 'Notification sent' });
+  } catch (err) {
+    console.error('Error creating notification:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+  
