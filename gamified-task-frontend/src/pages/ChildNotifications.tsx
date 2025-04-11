@@ -4,13 +4,14 @@ import API from '../services/api';
 interface Notification {
   id: number;
   message: string;
-  created_at: string;
-  read: boolean;
+  createdAt: string;
+  type: string; // e.g., 'approved', 'rejected', 'general'
 }
 
 const ChildNotifications = () => {
-  const childId = 1; // Replace with session/user ID
+  const childId = 1; // TEMP: Replace with actual user/session ID
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNotifications = async () => {
@@ -19,6 +20,8 @@ const ChildNotifications = () => {
         setNotifications(res.data);
       } catch (err) {
         console.error('Failed to load notifications', err);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -27,23 +30,27 @@ const ChildNotifications = () => {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">🔔 Notifications</h1>
+      <h1 className="text-3xl font-bold mb-6">🔔 Notifications</h1>
 
-      {notifications.length === 0 ? (
+      {loading ? (
+        <p className="text-gray-500">Loading notifications...</p>
+      ) : notifications.length === 0 ? (
         <p className="text-gray-500">No notifications yet.</p>
       ) : (
         <ul className="space-y-4">
-          {notifications.map((notification) => (
-            <li
-              key={notification.id}
-              className={`p-4 rounded-xl shadow border ${
-                notification.read ? 'bg-gray-100' : 'bg-white'
-              }`}
+          {notifications.map((note) => (
+            <li key={note.id} className="bg-white shadow-md p-4 rounded-xl border-l-4
+              transition-all hover:shadow-lg
+              ${
+                note.type === 'approved'
+                  ? 'border-green-500'
+                  : note.type === 'rejected'
+                  ? 'border-red-500'
+                  : 'border-blue-500'
+              }"
             >
-              <p className="text-sm text-gray-700">{notification.message}</p>
-              <p className="text-xs text-gray-400 mt-1">
-                {new Date(notification.created_at).toLocaleString()}
-              </p>
+              <p className="font-medium">{note.message}</p>
+              <p className="text-sm text-gray-500">{new Date(note.createdAt).toLocaleString()}</p>
             </li>
           ))}
         </ul>
