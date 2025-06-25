@@ -1,4 +1,4 @@
-# GameUP - Gamified Family Task Tracker
+# GameUP - Gamified Child Task Tracker
 
 A modern, gamified task management system designed to make household chores and responsibilities fun for families. Parents can assign tasks to their children, track progress, and reward completion with XP points.
 
