@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { logoutUser } from '../../../task-tracker-backend/src/utils/logout';
+import { logoutUser } from '../utils/auth';
 
 const Navbar = () => {
   const { pathname } = useLocation();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import API from '../services/api';
+import { useAuth } from '../contexts/AuthContext';
 
 interface XPData {
   date: string;
@@ -8,20 +8,37 @@ interface XPData {
 }
 
 const XPProgressChart = () => {
+  const { user } = useAuth();
   const [xpData, setXPData] = useState<XPData[]>([]);
 
   useEffect(() => {
-    const fetchXPData = async () => {
-      try {
-        const response = await API.get('/xp-progress'); // Adjust the endpoint as needed
-        setXPData(response.data);
-      } catch (error) {
-        console.error('Error fetching XP data:', error);
+    // Generate mock XP progress data for now
+    // In a real implementation, this would fetch from an API
+    const generateMockData = () => {
+      const data: XPData[] = [];
+      const today = new Date();
+      const currentXP = user?.total_xp || 0;
+      
+      // Generate data for the last 7 days
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(date.getDate() - i);
+        
+        // Simulate progressive XP growth
+        const progressFactor = (7 - i) / 7;
+        const xp = Math.floor(currentXP * progressFactor);
+        
+        data.push({
+          date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+          xp: xp
+        });
       }
+      
+      setXPData(data);
     };
 
-    fetchXPData();
-  }, []);
+    generateMockData();
+  }, [user]);
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -32,7 +49,13 @@ const XPProgressChart = () => {
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />
-          <Line type="monotone" dataKey="xp" stroke="#8884d8" />
+          <Line 
+            type="monotone" 
+            dataKey="xp" 
+            stroke="#8b5cf6" 
+            strokeWidth={3}
+            dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 4 }}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

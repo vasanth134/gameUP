@@ -1,0 +1,2474 @@
+
+> task-tracker-backend@1.0.0 dev
+> ts-node-dev src/server.ts
+
+[INFO] 22:00:28 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.8.3)
+✅ Server running at http://localhost:5000
+=== getUserById called ===
+Requesting user ID: 3
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 3,
+    name: 'asdas',
+    email: 'vasanthgdev@gmail.com',
+    role: 'parent',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 3
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 3,
+    name: 'asdas',
+    email: 'vasanthgdev@gmail.com',
+    role: 'parent',
+    xp: 0
+  }
+]
+=== Child signup request ===
+Request body: {
+  name: 'Test API Child',
+  email: 'testapi_1750869108072@test.com',
+  parent_id: 3
+}
+parent_id type: number
+parent_id value: 3
+Checking for parent with ID: 3 type: number
+Parent found: true
+Parent query result: [
+  {
+    id: 3,
+    name: 'asdas',
+    email: 'vasanthgdev@gmail.com',
+    password: '$2b$10$8eZSD6fmGVXA.KguKmrHz.0q1WxvQUMlGK..eNldUKasFPCME4eem',
+    role: 'parent',
+    parent_id: null,
+    total_xp: 0,
+    created_at: 2025-06-25T14:25:46.575Z
+  }
+]
+=== Child signup request ===
+Request body: { name: 'asa', email: '1bru92ffal@mozmail.com', parent_id: 3 }
+parent_id type: number
+parent_id value: 3
+Checking for parent with ID: 3 type: number
+Parent found: true
+Parent query result: [
+  {
+    id: 3,
+    name: 'asdas',
+    email: 'vasanthgdev@gmail.com',
+    password: '$2b$10$8eZSD6fmGVXA.KguKmrHz.0q1WxvQUMlGK..eNldUKasFPCME4eem',
+    role: 'parent',
+    parent_id: null,
+    total_xp: 0,
+    created_at: 2025-06-25T14:25:46.575Z
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== Child signup request ===
+Request body: { name: 'vasanth', email: 'vasanth@gmail.com', parent_id: 3 }
+parent_id type: number
+parent_id value: 3
+Checking for parent with ID: 3 type: number
+Parent found: true
+Parent query result: [
+  {
+    id: 3,
+    name: 'asdas',
+    email: 'vasanthgdev@gmail.com',
+    password: '$2b$10$8eZSD6fmGVXA.KguKmrHz.0q1WxvQUMlGK..eNldUKasFPCME4eem',
+    role: 'parent',
+    parent_id: null,
+    total_xp: 0,
+    created_at: 2025-06-25T14:25:46.575Z
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 13
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 13,
+    name: 'asa',
+    email: '1bru92ffal@mozmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+[INFO] 22:06:06 Restarting: /home/vasanth/vscode/gameUP/task-tracker-backend/src/routes/userRoutes.ts has been modified
+✅ Server running at http://localhost:5000
+=== getUserById called ===
+Requesting user ID: 2
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 2,
+    name: 'Test Child',
+    email: 'child@test.com',
+    role: 'child',
+    xp: 50
+  }
+]
+❌ Error fetching submission status: error: column s.created_at does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSubmissionStatusByChild (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:141:20) {
+  length: 169,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "t.created_at".',
+  position: '75',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+[INFO] 22:15:04 Restarting: /home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts has been modified
+✅ Server running at http://localhost:5000
+[INFO] 22:15:48 Restarting: /home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts has been modified
+✅ Server running at http://localhost:5000
+=== getUserById called ===
+Requesting user ID: 2
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 2,
+    name: 'Test Child',
+    email: 'child@test.com',
+    role: 'child',
+    xp: 50
+  }
+]
+=== getUserById called ===
+Requesting user ID: 2
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 2,
+    name: 'Test Child',
+    email: 'child@test.com',
+    role: 'child',
+    xp: 50
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+❌ Error fetching dashboard summary: error: column "xp" does not exist
+    at /home/vasanth/vscode/gameUP/task-tracker-backend/node_modules/pg-pool/index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 1)
+    at getChildSubmissionSummary (/home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts:202:39) {
+  length: 102,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '15',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+[INFO] 22:24:18 Restarting: /home/vasanth/vscode/gameUP/task-tracker-backend/src/controllers/submissionController.ts has been modified
+✅ Server running at http://localhost:5000
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+=== getUserById called ===
+Requesting user ID: 14
+Executing query: SELECT id, name, email, role, total_xp as xp FROM users WHERE id = $1
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]
+Query result: [
+  {
+    id: 14,
+    name: 'vasanth',
+    email: 'vasanth@gmail.com',
+    role: 'child',
+    xp: 0
+  }
+]

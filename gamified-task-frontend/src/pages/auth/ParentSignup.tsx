@@ -1,58 +1,135 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Mail, Lock, User, Users, ArrowLeft } from 'lucide-react';
+import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
+import { Card, CardContent, CardHeader } from '../../components/ui/Card';
+import API from '../../services/api';
+import toast from 'react-hot-toast';
 
-const ParentSignup: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
-  const [message, setMessage] = useState('');
+const ParentSignup = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup/parent', formData);
-      setMessage(res.data.message);
+      const res = await API.post('/auth/signup/parent', {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
+      toast.success('Account created successfully! Please login.');
+      navigate('/auth/parent-login');
     } catch (err: any) {
-      setMessage(err.response?.data?.message || 'Error occurred');
+      toast.error(err.response?.data?.message || 'Signup failed');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br ">
-      <div className="bg-white  /10 backdrop-blur-md shadow-xl rounded-2xl p-8 w-full max-w-md border border-black/20 ">
-        <h2 className="text-2xl font-bold text-black text-center mb-6">Parent Signup</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            name="name"
-            placeholder="Name"
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 rounded-lg bg-white/20 text-black placeholder-black/70 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <input
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 rounded-lg bg-white/20 text-black placeholder-black/70 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <input
-            name="password"
-            placeholder="Password"
-            type="password"
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition duration-300"
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-6">
+      <div className="w-full max-w-md">
+        {/* Back to home */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6"
+        >
+          <Link
+            to="/"
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
-            Sign Up
-          </button>
-        </form>
-        {message && <p className="text-center text-white mt-4">{message}</p>}
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Home
+          </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <Card>
+            <CardHeader>
+              <div className="text-center">
+                <div className="p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full w-fit mx-auto mb-4">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">Create Parent Account</h1>
+                <p className="text-gray-600">Join GameUP and start managing your child's learning journey</p>
+              </div>
+            </CardHeader>
+
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <Input
+                  label="Full Name"
+                  name="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  icon={<User className="h-5 w-5" />}
+                  required
+                />
+
+                <Input
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="parent@example.com"
+                  icon={<Mail className="h-5 w-5" />}
+                  required
+                />
+
+                <Input
+                  label="Password"
+                  name="password"
+                  type="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Create a strong password"
+                  icon={<Lock className="h-5 w-5" />}
+                  required
+                />
+
+                <Button
+                  type="submit"
+                  className="w-full"
+                  loading={loading}
+                >
+                  Create Account
+                </Button>
+
+                <div className="text-center text-sm text-gray-600">
+                  Already have an account?{' '}
+                  <Link
+                    to="/auth/parent-login"
+                    className="text-blue-600 hover:text-blue-700 font-semibold"
+                  >
+                    Sign in here
+                  </Link>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </div>
   );

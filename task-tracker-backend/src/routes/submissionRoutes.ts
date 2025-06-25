@@ -3,12 +3,15 @@ import multer from 'multer';
 import path from 'path';
 import {
   handleSubmissionUpload,
+  createSimpleSubmission,
   getSubmissionsByChild,
   getSubmissionsByTask,
   reviewSubmission,
   getSubmissionStatusByChild,
   isTaskSubmittedByChild,
-  getChildSubmissionSummary, // ✅ all good here
+  getChildSubmissionSummary,
+  getPendingSubmissions,
+  getAllSubmissionsForParent,
 } from '../controllers/submissionController';
 // import submissionRoutes from '../routes/submissionRoutes';
 
@@ -25,8 +28,11 @@ const upload = multer({ storage });
 
 // Routes
 
-// Upload submission
-router.post('/upload', upload.single('file'), handleSubmissionUpload);
+// Simple submission without file
+router.post('/', createSimpleSubmission);
+
+// Upload submission with file
+router.post('/upload', upload.single('photo'), handleSubmissionUpload);
 
 // Get all submissions by child
 router.get('/child/:childId/submissions', getSubmissionsByChild);
@@ -38,10 +44,14 @@ router.get('/child/:childId/status-summary', getSubmissionStatusByChild);
 router.get('/task/:taskId', getSubmissionsByTask);
 
 // Review a submission (approve/reject + optional XP update)
-router.put('/review/:submissionId', reviewSubmission); // ✅ CORRECT
+router.put('/:submissionId/review', reviewSubmission);
 
 router.get('/check/:taskId/:childId', isTaskSubmittedByChild);
 
 router.get('/child/:childId/summary', getChildSubmissionSummary);
+
+// Parent routes for reviewing submissions
+router.get('/parent/:parentId/pending', getPendingSubmissions);
+router.get('/parent/:parentId/all', getAllSubmissionsForParent);
 
 export default router;

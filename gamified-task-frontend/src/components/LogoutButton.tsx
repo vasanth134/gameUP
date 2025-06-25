@@ -1,12 +1,12 @@
 // src/components/LogoutButton.tsx
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../utils/auth';
 
 const LogoutButton = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear(); // removes all stored user data
-    navigate('/login/parent'); // or /login/child depending on role
+    logout(navigate);
   };
 
   return (

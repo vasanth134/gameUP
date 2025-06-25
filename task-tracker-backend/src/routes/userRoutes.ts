@@ -1,11 +1,13 @@
 import express from 'express';
 import {
+  getUserById,
   getUserXP,
   getXPLeaderboard,
   getChildSummaryForParent,
   getXpSummary,
   getAssignedTasksForChild,
-  getDashboardStats
+  getDashboardStats,
+  getChildrenForParent
 } from '../controllers/userController';
 
 import { parentLogin, childLogin   ,parentSignup,
@@ -13,9 +15,12 @@ import { parentLogin, childLogin   ,parentSignup,
 
 const router = express.Router();
 
-router.get('/:id/xp', getUserXP);
+// Specific routes must come before generic parameterized routes
 router.get('/leaderboard', getXPLeaderboard);
+router.get('/parent/:parentId/children', getChildrenForParent);
 router.get('/parent/:childId/summary', getChildSummaryForParent);
+router.get('/:id', getUserById);
+router.get('/:id/xp', getUserXP);
 router.get('/:childId/xp-summary', getXpSummary);
 router.get('/:childId/assigned-tasks', getAssignedTasksForChild);
 router.get('/:childId/dashboard-summary', getDashboardStats);
