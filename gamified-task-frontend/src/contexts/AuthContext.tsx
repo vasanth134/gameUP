@@ -12,6 +12,7 @@ interface User {
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (userData: User) => void;
   logout: () => void;
   getChildren: () => Promise<User[]>;
@@ -34,31 +35,58 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Check for stored user session
-    const storedUser = localStorage.getItem('gameup_user');
-    if (storedUser) {
+    const initAuth = async () => {
       try {
-        const userData = JSON.parse(storedUser);
-        setUser(userData);
-        setIsAuthenticated(true);
+        const storedUser = localStorage.getItem('gameup_user');
+        if (storedUser) {
+          const userData = JSON.parse(storedUser);
+          
+          // Validate the session by checking if user still exists
+          try {
+            const response = await fetch(`http://localhost:5000/api/users/${userData.id}`);
+            if (response.ok) {
+              const validatedUser = await response.json();
+              setUser(validatedUser);
+              setIsAuthenticated(true);
+              // Update localStorage with fresh data
+              localStorage.setItem('gameup_user', JSON.stringify(validatedUser));
+            } else {
+              // User no longer exists, clear session
+              localStorage.removeItem('gameup_user');
+            }
+          } catch (error) {
+            console.error('Error validating session:', error);
+            // Network error, use stored data anyway
+            setUser(userData);
+            setIsAuthenticated(true);
+          }
+        }
       } catch (error) {
         console.error('Error parsing stored user data:', error);
         localStorage.removeItem('gameup_user');
+      } finally {
+        setIsLoading(false);
       }
-    }
+    };
+
+    initAuth();
   }, []);
 
   const login = (userData: User) => {
     setUser(userData);
     setIsAuthenticated(true);
+    setIsLoading(false);
     localStorage.setItem('gameup_user', JSON.stringify(userData));
   };
 
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
+    setIsLoading(false);
     localStorage.removeItem('gameup_user');
   };
 
@@ -84,6 +112,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const value: AuthContextType = {
     user,
     isAuthenticated,
+    isLoading,
     login,
     logout,
     getChildren,

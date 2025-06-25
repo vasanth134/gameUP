@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { TaskStatusBadge } from '../components/ui/Badge';
 import API from '../services/api';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 interface SubmissionSummary {
@@ -27,16 +27,7 @@ interface Task {
 }
 
 const ParentDashboard = () => {
-  const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
-
-  // Redirect if not authenticated or not a parent
-  useEffect(() => {
-    if (!isAuthenticated || !user || user.role !== 'parent') {
-      navigate('/auth/parent-login');
-      return;
-    }
-  }, [isAuthenticated, user, navigate]);
+  const { user } = useAuth();
 
   const [summary, setSummary] = useState<SubmissionSummary>({
     totalXP: 0,
@@ -47,11 +38,6 @@ const ParentDashboard = () => {
   const [recentTasks, setRecentTasks] = useState<Task[]>([]);
   const [children, setChildren] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
-  // Don't render if user is not authenticated or not a parent
-  if (!isAuthenticated || !user || user.role !== 'parent') {
-    return null;
-  }
 
   const hasChildren = children.length > 0;
 

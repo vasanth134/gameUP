@@ -170,7 +170,7 @@ const getChildSubmissionSummary = async (req, res) => {
     try {
         const summaryQuery = `
       SELECT 
-        COUNT(*) FILTER (WHERE status = 'submitted') AS total_submitted,
+        COUNT(*) AS total_submissions,
         COUNT(*) FILTER (WHERE status = 'approved') AS total_approved,
         COUNT(*) FILTER (WHERE status = 'rejected') AS total_rejected,
         COUNT(*) FILTER (WHERE status = 'pending') AS total_pending
@@ -178,16 +178,16 @@ const getChildSubmissionSummary = async (req, res) => {
       WHERE child_id = $1
     `;
         const xpQuery = `
-      SELECT total_xp as xp FROM users WHERE id = $1
+      SELECT total_xp FROM users WHERE id = $1
     `;
         const [summaryResult, xpResult] = await Promise.all([
             db_1.pool.query(summaryQuery, [childId]),
             db_1.pool.query(xpQuery, [childId]),
         ]);
         const summary = summaryResult.rows[0];
-        const xp = xpResult.rows[0]?.xp ?? 0;
+        const xp = xpResult.rows[0]?.total_xp ?? 0;
         res.status(200).json({
-            totalSubmissions: parseInt(summary.total_submitted || 0),
+            totalSubmissions: parseInt(summary.total_submissions || 0),
             approved: parseInt(summary.total_approved || 0),
             rejected: parseInt(summary.total_rejected || 0),
             pending: parseInt(summary.total_pending || 0),

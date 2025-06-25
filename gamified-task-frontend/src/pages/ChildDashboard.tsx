@@ -10,7 +10,6 @@ import TaskSubmissionModal from '../components/TaskSubmissionModal';
 import API from '../services/api';
 import toast from 'react-hot-toast';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 interface Task {
   id: number;
@@ -28,16 +27,7 @@ interface XPInfo {
 }
 
 const ChildDashboard = () => {
-  const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
-
-  // Redirect if not authenticated or not a child
-  useEffect(() => {
-    if (!isAuthenticated || !user || user.role !== 'child') {
-      navigate('/auth/child-login');
-      return;
-    }
-  }, [isAuthenticated, user, navigate]);
+  const { user } = useAuth();
 
   const [tasks, setTasks] = useState<Task[]>([]);
   const [xp, setXP] = useState<XPInfo>({
@@ -56,53 +46,53 @@ const ChildDashboard = () => {
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
   const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false);
 
-  // Don't render if user is not authenticated or not a child
-  if (!isAuthenticated || !user || user.role !== 'child') {
-    return null;
-  }
-
   useEffect(() => {
     const fetchAllData = async () => {
       if (!user) return;
       
       try {
-        const [taskRes, xpRes, statusRes] = await Promise.all([
+        const [taskRes, xpRes, summaryRes] = await Promise.all([
           API.get(`/tasks?userId=${user.id}&role=child`),
           API.get(`/users/${user.id}`),
-          API.get(`/submissions/child/${user.id}/status-summary`),
+          API.get(`/submissions/child/${user.id}/summary`),
         ]);
 
         setTasks(taskRes.data || []);
+        
+        // Fix: Use 'xp' field from API response (not 'total_xp')
+        const userXP = xpRes.data.xp || 0;
         setXP({
-          currentXP: xpRes.data.total_xp % 100,
+          currentXP: userXP % 100,
           nextLevelXP: 100,
-          totalXP: xpRes.data.total_xp,
+          totalXP: userXP,
         });
 
-        const summaryMap: Record<string, number> = {};
-        const submittedIds: number[] = [];
+        // Use the summary endpoint which gives us the correct counts
+        const summary = summaryRes.data;
+        setStatusCounts({
+          submitted: summary.totalSubmissions || 0,
+          approved: summary.approved || 0,
+          rejected: summary.rejected || 0,
+          pending: summary.pending || 0,
+        });
 
-        if (statusRes.data) {
-          statusRes.data.forEach((item: any) => {
-            const status = item.status.toLowerCase();
-            summaryMap[status] = parseInt(item.count);
-            if (status === 'submitted' || status === 'pending' || status === 'reviewed' || status === 'approved') {
-              // Add all task_ids for submitted/pending/reviewed tasks
+        // For submitted task IDs, we need to get them from the status endpoint
+        try {
+          const statusRes = await API.get(`/submissions/child/${user.id}/status-summary`);
+          const submittedIds: number[] = [];
+          
+          if (statusRes.data) {
+            statusRes.data.forEach((item: any) => {
               if (item.task_ids && Array.isArray(item.task_ids)) {
                 submittedIds.push(...item.task_ids);
               }
-            }
-          });
+            });
+          }
+          setSubmittedTaskIds(submittedIds);
+        } catch (statusError) {
+          console.error('Error fetching submitted task IDs:', statusError);
         }
 
-        setStatusCounts({
-          submitted: summaryMap['submitted'] || 0,
-          approved: summaryMap['reviewed'] || 0,
-          rejected: summaryMap['rejected'] || 0,
-          pending: summaryMap['pending'] || 0,
-        });
-
-        setSubmittedTaskIds(submittedIds);
       } catch (error) {
         console.error('Dashboard fetch failed:', error);
       } finally {
@@ -134,40 +124,45 @@ const ChildDashboard = () => {
 
     // Refresh dashboard data
     try {
-      const [xpRes, statusRes] = await Promise.all([
+      const [xpRes, summaryRes] = await Promise.all([
         API.get(`/users/${user.id}`),
-        API.get(`/submissions/child/${user.id}/status-summary`),
+        API.get(`/submissions/child/${user.id}/summary`),
       ]);
 
+      // Fix: Use 'xp' field from API response
+      const userXP = xpRes.data.xp || 0;
       setXP({
-        currentXP: xpRes.data.total_xp % 100,
+        currentXP: userXP % 100,
         nextLevelXP: 100,
-        totalXP: xpRes.data.total_xp,
+        totalXP: userXP,
       });
 
-      const summaryMap: Record<string, number> = {};
-      const submittedIds: number[] = [];
+      // Use the correct summary data structure
+      const summary = summaryRes.data;
+      setStatusCounts({
+        submitted: summary.totalSubmissions || 0,
+        approved: summary.approved || 0,
+        rejected: summary.rejected || 0,
+        pending: summary.pending || 0,
+      });
 
-      if (statusRes.data) {
-        statusRes.data.forEach((item: any) => {
-          const status = item.status.toLowerCase();
-          summaryMap[status] = parseInt(item.count);
-          if (status === 'submitted' || status === 'pending' || status === 'reviewed' || status === 'approved') {
+      // Update submitted task IDs
+      try {
+        const statusRes = await API.get(`/submissions/child/${user.id}/status-summary`);
+        const submittedIds: number[] = [];
+        
+        if (statusRes.data) {
+          statusRes.data.forEach((item: any) => {
             if (item.task_ids && Array.isArray(item.task_ids)) {
               submittedIds.push(...item.task_ids);
             }
-          }
-        });
+          });
+        }
+        setSubmittedTaskIds(submittedIds);
+      } catch (statusError) {
+        console.error('Error fetching submitted task IDs:', statusError);
       }
 
-      setStatusCounts({
-        submitted: summaryMap['submitted'] || 0,
-        approved: summaryMap['reviewed'] || 0,
-        rejected: summaryMap['rejected'] || 0,
-        pending: summaryMap['pending'] || 0,
-      });
-
-      setSubmittedTaskIds(submittedIds);
     } catch (error) {
       console.error('Error refreshing dashboard:', error);
     }

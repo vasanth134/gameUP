@@ -8,10 +8,19 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ role, children }: ProtectedRouteProps) => {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, isLoading } = useAuth();
 
+  // Show loading spinner while checking authentication
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+      </div>
+    );
+  }
+
+  // Redirect if not authenticated or wrong role
   if (!isAuthenticated || !user || user.role !== role) {
-    // Redirect to appropriate login page
     const loginPath = role === 'parent' ? '/auth/parent-login' : '/auth/child-login';
     return <Navigate to={loginPath} replace />;
   }
