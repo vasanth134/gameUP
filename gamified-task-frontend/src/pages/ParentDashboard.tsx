@@ -4,6 +4,7 @@ import { Plus, Eye, Calendar, CheckCircle, XCircle, Clock, Trophy, UserPlus } fr
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { TaskStatusBadge } from '../components/ui/Badge';
+import { TaskStatusDropdown } from '../components/TaskStatusDropdown';
 import API from '../services/api';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -40,6 +41,14 @@ const ParentDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   const hasChildren = children.length > 0;
+
+  const handleStatusUpdate = (taskId: number, newStatus: string) => {
+    setRecentTasks(prevTasks => 
+      prevTasks.map(task => 
+        task.id === taskId ? { ...task, status: newStatus } : task
+      )
+    );
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -239,8 +248,18 @@ const ParentDashboard = () => {
                           <span>Child: {task.child_name}</span>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <TaskStatusBadge status={task.status} />
+                      <div className="flex items-center justify-between space-x-4">
+                        <div className="flex items-center space-x-3">
+                          <TaskStatusBadge status={task.status} />
+                          <div className="text-sm text-gray-500">
+                            Update Status:
+                          </div>
+                          <TaskStatusDropdown
+                            taskId={task.id}
+                            currentStatus={task.status}
+                            onStatusUpdate={handleStatusUpdate}
+                          />
+                        </div>
                         <Button variant="ghost" size="sm">
                           <Eye className="h-4 w-4" />
                         </Button>

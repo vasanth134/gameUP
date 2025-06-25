@@ -47,6 +47,12 @@ export const TaskStatusBadge: React.FC<{ status: string }> = ({ status }) => {
         return 'warning';
       case 'submitted':
         return 'info';
+      case 'approved':
+        return 'success';
+      case 'rejected':
+        return 'danger';
+      case 'not_submitted':
+        return 'default';
       case 'reviewed':
         return 'success';
       default:
@@ -54,9 +60,18 @@ export const TaskStatusBadge: React.FC<{ status: string }> = ({ status }) => {
     }
   };
 
+  const getDisplayText = (status: string) => {
+    switch (status?.toLowerCase()) {
+      case 'not_submitted':
+        return 'Not Submitted';
+      default:
+        return status?.charAt(0).toUpperCase() + status?.slice(1);
+    }
+  };
+
   return (
     <Badge variant={getVariant(status)}>
-      {status?.charAt(0).toUpperCase() + status?.slice(1)}
+      {getDisplayText(status)}
     </Badge>
   );
 };

@@ -8,6 +8,7 @@ import Notifications from './pages/Notifications';
 import XPProgress from './pages/XPProgress';
 import ReviewSubmissions from './pages/ReviewSubmissions';
 import AssignTask from './pages/AssignTask';
+import Tasks from './pages/Tasks';
 import Navbar from './components/Navbar';
 import ParentLogin from './pages/auth/ParentLogin';
 import ChildLogin from './pages/auth/ChildLogin';
@@ -83,7 +84,7 @@ const App = () => {
           path="/tasks"
           element={
             <ProtectedRoute role="parent">
-              <ParentDashboard />
+              <Tasks />
             </ProtectedRoute>
           }
         />
