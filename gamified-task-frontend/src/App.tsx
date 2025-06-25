@@ -19,6 +19,7 @@ import Home from './pages/Home';
 import ParentSignup from './pages/auth/ParentSignup';
 import ChildSignup from './pages/auth/ChildSignup';
 import CreateChildAccount from './pages/CreateChildAccount';
+import TestSubmissionModal from './pages/TestSubmissionModal';
 
 const App = () => {
   return (
@@ -105,8 +106,9 @@ const App = () => {
           <Route path="profile" element={<ChildProfile />} />
         </Route>
 
-        {/* Dev Route */}
-        <Route path="/navbar" element={<Navbar />} />
+        {/* Test Route for Development */}
+        <Route path="/test-submission" element={<TestSubmissionModal />} />
+
       </Routes>
       
       {/* Toast Notifications */}

@@ -9,6 +9,6 @@ const taskController_1 = require("../controllers/taskController");
 const router = express_1.default.Router();
 router.get('/', taskController_1.getTasks); // GET /api/tasks?userId=123&role=parent|child
 router.post('/', taskController_1.createTask); // POST /api/tasks/create
-router.put('/:taskId/status', taskController_1.updateTaskStatus); // PUT /api/tasks/:taskId/status
 router.get('/child/:childId', taskController_1.getTasksByChild);
+router.put('/:taskId/status', taskController_1.updateTaskStatus); // PUT /api/tasks/:taskId/status
 exports.default = router;
