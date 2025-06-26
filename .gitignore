@@ -1,2 +1,10 @@
 /uploads
 /node_modules
+/.env
+/dist
+/gamified-task-frontend/node_modules
+/gamified-task-frontend/dist
+/gamified-task-frontend/.env
+/gamified-task-backend/node_modules
+/gamified-task-backend/dist
+/gamified-task-backend/.env

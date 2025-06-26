@@ -171,9 +171,8 @@ The database includes pre-configured test accounts:
 ### Key Technical Decisions
 1. **TypeScript**: Chosen for better type safety and developer experience
 2. **PostgreSQL**: Selected for robust relational data handling and ACID compliance
-3. **JWT Authentication**: Stateless authentication for scalability
-4. **React Context**: Simple state management solution for this application size
-5. **Tailwind CSS**: Utility-first CSS for rapid, consistent styling
+3. **React Context**: Simple state management solution for this application size
+4. **Tailwind CSS**: Utility-first CSS for rapid, consistent styling
 
 ## 🧪 Testing
 
