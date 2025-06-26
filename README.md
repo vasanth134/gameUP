@@ -151,10 +151,6 @@ The database includes pre-configured test accounts:
 - `POST /api/submissions` - Create submission (child only)
 - `PUT /api/submissions/:id/review` - Review submission (parent only)
 
-### Notifications
-- `GET /api/notifications/:childId` - Get notifications for child
-- `POST /api/notifications` - Create notification
-- `PUT /api/notifications/:id/read` - Mark notification as read
 
 ## 🛠️ Development Approach
 
